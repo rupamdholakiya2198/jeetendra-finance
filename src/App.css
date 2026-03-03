@@ -20,6 +20,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;     /* ADD THIS */
+  gap: 10px;
 }
 
 .logo {
@@ -43,7 +45,8 @@ body {
 }
 
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;   /* use min-height instead of height */
+  padding: 60px 0;     /* allow breathing space */
 
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
@@ -88,14 +91,6 @@ body {
   margin-top: 10px;
 }
 
-.hero-right {
-  flex: 1;
-  text-align: left;
-  background: rgba(255,255,255,0.08);
-  padding: 30px;
-  border-radius: 8px;
-  backdrop-filter: blur(4px);
-}
 
 .hero-right h3 {
   margin-bottom: 20px;
@@ -748,4 +743,73 @@ body {
 
 body {
   overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right {
+    text-align: left;
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 36px;
+  }
+
+  .hero-right {
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+  }
+
+}
+
+/* RIGHT SIDE WRAPPER */
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* SERVICES GLASS BOX */
+.hero-services-box {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* TITLE */
+.hero-services-box h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* LIST */
+.hero-services {
+  list-style: none;
+  padding: 0;
+}
+
+.hero-services li {
+  margin-bottom: 12px;
+  font-size: 15px;
 }
